@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import nextConnect from 'next-connect'
 
-// @ts-ignore
 import notes from '../../../data/data'
 
 const handler = nextConnect()
