@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-export default () => {
+export default ({ content }) => {
   return (
     <div sx={{ height: `calc(100vh - 60px)` }}>
       <div
@@ -12,8 +12,18 @@ export default () => {
           height: '100%',
         }}
       >
-        <h1 sx={{ fontSize: 8, my: 0 }}>Note Taking</h1>
+        <h1 sx={{ fontSize: 8, my: 0 }}>{content.title}</h1>
       </div>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      content: {
+        title: 'Notes App',
+      },
+    },
+  }
 }

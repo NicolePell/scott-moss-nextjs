@@ -8,9 +8,7 @@ const getNote = (id: string) => notes.find((n) => n.id === parseInt(id))
 
 const handler = nextConnect()
   .get((req: NextApiRequest, res: NextApiResponse) => {
-    console.log({ id: req.query.id })
     const note = getNote(req.query.id as string)
-    console.log({ note })
 
     if (!note) {
       res.statusCode = 404
